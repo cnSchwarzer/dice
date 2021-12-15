@@ -32,6 +32,11 @@ exports.dice = {
   handler: service.dice,
 }
 
+exports.r = {
+  label: '.dice 简化 .r',
+  handler: service.dice,
+}
+
 exports.coc7 = {
   label: '生成一个随机的 coc7 角色，生成后会自动写入你的角色卡。你可以传入参数来控制年龄。例如.coc7 年龄 40',
   handler: service.coc7,
@@ -73,11 +78,11 @@ exports.allowgroup = {
   invisible: true,
 };
 
-exports.removegroup = {
-  label: 'bot 管理员限定 - 让 bot 退出某些群，同时不再允许该群添加本 bot。例如.removegroup 12345678',
-  handler: service.removeGroup,
-  invisible: true,
-};
+// exports.removegroup = {
+//   label: 'bot 管理员限定 - 让 bot 退出某些群，同时不再允许该群添加本 bot。例如.removegroup 12345678',
+//   handler: service.removeGroup,
+//   invisible: true,
+// };
 
 exports.allowfriend = {
   label: 'bot 管理员限定 - 允许某些人添加这个 bot 为好友。例如.allowfriend 12345678',

@@ -14,13 +14,8 @@ let _db = null;
  */
 let mongoConnect = async () => {
   try {
-    let { host, port, username, password, databaseName } = config.mongo;
-    let linkUrl = `mongodb://${host}:${port}/`;
-    /* istanbul ignore next */
-    if (username && password) {
-      linkUrl = `mongodb://${username}:${password}@${host}:${port}/${databaseName}`;
-    }
-    _db = (await MongoClient.connect(linkUrl, { useNewUrlParser: true, useUnifiedTopology: true })).db(databaseName);
+    let { url, databaseName } = config.mongo; 
+    _db = (await MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })).db(databaseName);
 
     // 绑定快捷路径
     exports.User = _db.collection('user');

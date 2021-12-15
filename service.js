@@ -100,10 +100,8 @@ exports.dice = async function (message, sender) {
   let times = dice[0];
   let max = dice[1];
   let dicePoint = utils.dice(times, max);
-  let opt = [];
-  for (let i = 0; i < dicePoint.length; i++) {
-    opt.push(`第${i + 1}个骰子的值为: ${dicePoint[i]}`);
-  }
+  let opt = []; 
+  opt.push(dicePoint.join(','))
   opt.push(`共计: ${dicePoint.reduce((a, b) => a + b, 0)}`);
   return '\n' + opt.join('\n');
 }

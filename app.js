@@ -47,26 +47,26 @@ app.use('/', async (req, res, next) => {
           });
           break;
         }
-        if (req.body.message_type === 'private') {
-          await utils.sendMessage({
-            user_id: req.body.user_id,
-            message: sender.nickname + ': ' + output
-          });
-          break;
-        }
+        // if (req.body.message_type === 'private') {
+        //   await utils.sendMessage({
+        //     user_id: req.body.user_id,
+        //     message: sender.nickname + ': ' + output
+        //   });
+        //   break;
+        // }
       }
     };
   }
   // 请求处理
-  if (req.body.post_type === 'request') {
-    if (req.body.request_type === 'group' && req.body.sub_type === 'invite') {
-      return await handler.acceptGroupInvite(req, res);
-    }
+  // if (req.body.post_type === 'request') {
+  //   if (req.body.request_type === 'group' && req.body.sub_type === 'invite') {
+  //     return await handler.acceptGroupInvite(req, res);
+  //   }
     
-    if (req.body.request_type === 'friend') {
-      return await handler.acceptFriendInvite(req, res);
-    }
-  }
+  //   if (req.body.request_type === 'friend') {
+  //     return await handler.acceptFriendInvite(req, res);
+  //   }
+  // }
   return res.send({ status: 'ok' });
 })
 

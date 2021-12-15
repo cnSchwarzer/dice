@@ -82,6 +82,6 @@ let random = (from, to) => {
 exports.random = random;
 
 let isAdmin = (userId) => {
-  return config.adminIdList.includes(userId);
+  return config.adminIdList.includes(userId.toString());
 }
 exports.isAdmin = isAdmin;
